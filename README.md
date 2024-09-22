@@ -13,6 +13,8 @@ Before you begin, make sure you have the following installed:
 - [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
 
 ## Project Structure
+
+```md
 ├── src/ 
 │ 
 ├── components/ 
@@ -27,6 +29,7 @@ Before you begin, make sure you have the following installed:
 ├── package.json # Node.js dependencies and scripts 
 ├── README.md # Project documentation 
 └── .gitignore # Files to ignore in Git
+```
 
 ## Getting Started
 
@@ -85,6 +88,10 @@ In the project directory, you can run the following scripts:
 - `npm run dev`: Runs both the React app and Node.js server concurrently.
 - `npm start`: Runs only the React app.
 - `node src/server.mjs`: Runs only the Node.js backend.
+
+## License
+
+This project is licensed under the MIT License.
 
 ### Key Sections:
 - **Prerequisites**: Lists the required tools.
