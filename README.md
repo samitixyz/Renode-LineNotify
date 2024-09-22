@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# React App with Node.js Backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application that runs alongside a Node.js server. The server handles an API request to a notification service (LINE Notify) when a button is clicked in the React app.
+
+## Author
+Created by **Samiti**
+
+## Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/en/download/) (version 14 or higher)
+- [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
+
+## Project Structure
+├── src/ 
+│ 
+├── components/ 
+│ 
+│ 
+└── ClickNotify.tsx # React component to trigger the notification 
+│ 
+└── server.mjs # Node.js server (ES module) 
+├── public/ 
+│ 
+└── index.html # Main HTML file 
+├── package.json # Node.js dependencies and scripts 
+├── README.md # Project documentation 
+└── .gitignore # Files to ignore in Git
+
+## Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+```
+### 2. Install Dependencies
+Run the following command to install the dependencies for both the React app and the Node.js backend:
+
+```
+npm install
+```
+
+### 3. Running the Application
+To start both the React frontend and the Node.js backend, you can run the following command:
+
+```
+npm run dev
+```
+
+This will:
+
+- Start the React application at `http://localhost:3000`
+- Start the Node.js server at `http://localhost:5000`
+
+### 4. Access the Application
+Open your browser and go to http://localhost:3000. You will see a button that, when clicked, sends a request to the Node.js backend to trigger a notification
+
+## Button Notification Feature
+
+The React app includes a button that calls the `/notify` endpoint on the Node.js server when clicked. Here's how it works:
+
+1. **Button Click**: The `ClickNotify` component sends a POST request to the backend at `http://localhost:5000/notify`.
+2. **Backend Handling**: The Node.js server (`src/server.mjs`) receives the request and sends a notification to LINE Notify via their API.
+3. **Server Response**: The server responds with the result of the notification request, which is logged to the console.
+
+---
+
+## Notify API
+
+The backend uses the following API to send notifications:
+
+- **Endpoint**: `https://notify-api.line.me/api/notify`
+- **Method**: POST
+- **Body**: URL-encoded data containing the notification message.
+
+---
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run the following scripts:
 
-### `npm start`
+- `npm run dev`: Runs both the React app and Node.js server concurrently.
+- `npm start`: Runs only the React app.
+- `node src/server.mjs`: Runs only the Node.js backend.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Key Sections:
+- **Prerequisites**: Lists the required tools.
+- **Project Structure**: Gives a high-level overview of the files.
+- **Getting Started**: Instructions on cloning, installing dependencies, and running the app.
+- **Button Notification Feature**: Explains the functionality of the button triggering the `/notify` API on the server.
+- **Notify API**: A brief description of the external notification API used in the backend.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+You can modify this template according to your specific project needs! Let me know if you'd like to adjust anything.
