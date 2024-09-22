@@ -1,6 +1,8 @@
-# React App with Node.js Backend
+# Send LINE Notifications with React and Node.js
 
-This project is a React application that runs alongside a Node.js server. The server handles an API request to a notification service (LINE Notify) when a button is clicked in the React app.
+<img src="./linenotify.png" alt="LINE Notify" style="width: 100%;" />
+
+This project demonstrates how to send notifications through LINE Notify by integrating a React frontend with a Node.js backend. The Node.js server processes the API request when a button is clicked in the React app, delivering real-time notifications seamlessly.
 
 ## Author
 Created by **Samiti**
